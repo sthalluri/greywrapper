@@ -286,13 +286,13 @@ ul.alert-dropdown {
 
 .sidebar-toggle-box {
     float: left;
-    margin-top: 9px;
-    margin-left: 15px !important;
+       margin-top: 5px;
+    margin-left: 24px !important;
     background: #40C377 !important;
     border-radius: 2%;
     -webkit-border-radius: 2%;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     position: absolute;
     right:4px;
     -webkit-transition: all 0.7s ease;
@@ -326,10 +326,15 @@ ul.alert-dropdown {
 .sub > li a {
     transition: color;
     transition-duration: 0.4s;
-    padding: 8px 20px 10px 60px !important;
+    padding: 5px 20px 4px 42px !important;
     position: relative;
     line-height: 20px;
     letter-spacing: 0.3px;
+    white-space: nowrap;
+    width: 87%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	font-size:12px;
 }
 
 .fa-postion{    position: relative;
@@ -540,3 +545,88 @@ ul.alert-dropdown {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     border-left: 0px solid !important;
 }
+
+.dashboard-btn-group1 .dropdown-menu {
+    right: 0 !important;
+    left: inherit;
+    overflow-y: scroll;
+    height: 350px;
+}
+
+.dashboard-btn-group1 .dropdown-menu li {
+    padding: 4px 3px !important;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    color: #333;
+}
+
+.grid-stack > .grid-stack-item > .grid-stack-item-content {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    width: auto;
+    z-index: 0 !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.btn-dark {
+    color: #ffffff !important;
+    background-color: #475069;
+    border-color: #475069;
+}
+
+.delete-icon {
+    position: absolute;
+    right: 11px;
+    z-index: 9;
+}
+
+.move-icon-bg {
+    position: absolute;
+    left: -13px;
+    top: 8px;
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.258824) 0px 0px 3px 0px;
+    background: rgb(95, 101, 107);
+    padding: 9px 6px 9px 8px;
+    border-radius: 4px 0px 0px 4px;
+}
+
+ .chart-modal{    position: absolute;
+        width:280px;
+        top: 12%;
+        z-index: 99;
+        right: 13px;}
+}
+
+.btn-info {
+    color: #ffffff !important;
+    background-color: #3c86db !important;
+    border-color: #2979d5 !important;
+}
+
+.m-h-xs {
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.panel-body {
+    padding: 15px;
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.grid-stack>.grid-stack-item {
+    min-width: 8.3333333333%;
+    position: absolute;
+    padding: 0;
+    height: 400px !IMPORTANT;
+	}
