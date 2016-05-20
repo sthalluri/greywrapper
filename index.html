@@ -36,9 +36,7 @@
                         <input id="password" type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                     <div class="checkbox text-left col-xs-6 no-padding-h">
-                        <label>
-                            <input type="checkbox">
-                            Remember me ? </label>
+                        <label><input type="checkbox">Remember me</label>
                     </div>
                     <div class="help-block text-right col-xs-6 no-padding-h"><a href="">Forget the password ?</a></div>
                     <div class="row no-margin">
@@ -47,13 +45,11 @@
                 </form>
             </div>
             <div class="modal-footer text-center">
-
                 Don`t have an account ? <br>
                 <button type="button" class="btn btn-info" id="loginButton">Create account</button>
             </div>
-
         </div>
-        <h5 class="text-black-lt text-center m-v-md font-thin">©2014 Copyright Dynamic admin. All right reserved !!!</h5>
+        <h5 class="text-black-lt text-center m-v-md font-thin">©2016 Copyright InAppBI. All right reserved !!!</h5>
     </div>
 </div>
 
@@ -208,7 +204,6 @@
     $('#loginModal').modal('show');
 
     $('#loginButton').click(function (event) {
-        var loginInfo = $('form').serializeArray();
         var data = $('#loginForm').serializeArray().reduce(function (obj, item) {
             obj[item.name] = item.value;
             return obj;
@@ -222,9 +217,9 @@
 
         inAppBIWrapper = new InAppBIWrapper(appConfig,
                 function (data) {
-                    console.log('success:' + data);
                     initShellSite();
                     $('#loginModal').modal('hide');
+                    $('#loginForm')[0].reset();
                     $('#wrapper').show();
                 }, function(error){
                     console.log('Error : '+ error);
@@ -240,8 +235,6 @@
     function toggleLeftSide() {
         $('.collapse').hide();
     }
-
-    console.log(window.localStorage['ngStorage-token']);
 </script>
 
 </body>
