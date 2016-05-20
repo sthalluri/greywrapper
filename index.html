@@ -17,32 +17,73 @@
 </head>
 <body>
 
+<!--<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" data-backdrop="static">-->
+    <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<h4 class="modal-title" id="exampleModalLabel">Login Your App Name </h4>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<form id="loginForm">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="domain" class="control-label">Domain</label>-->
+                        <!--<input type="text" name="domain" class="form-control" id="domain">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="username" class="control-label">UserId</label>-->
+                        <!--<input type="text" name="username" class="form-control" id="username">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="password" class="control-label">Password</label>-->
+                        <!--<input type="password" name="password" class="form-control" id="password">-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+            <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-primary" id="loginButton">Login</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <h2 class="modal-title text-center m-t-md  font-bold text-black-lt" id="exampleModalLabel">APP NAME</h2>
+        <div class="modal-content m-t-md">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Login Your App Name </h4>
+                <h4 class="modal-title text-center text-black-lt" id="exampleModalLabel">Login to your account</h4>
             </div>
-            <div class="modal-body">
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="domain" class="control-label">Domain</label>
-                        <input type="text" name="domain" class="form-control" id="domain">
+            <div class="modal-body" >
+                <form name="form" id="loginForm" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                    <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                        <input id="domain" type="text" class="form-control" name="domain" value="" placeholder="Domain">
                     </div>
-                    <div class="form-group">
-                        <label for="username" class="control-label">UserId</label>
-                        <input type="text" name="username" class="form-control" id="username">
+                    <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="username" type="text" class="form-control" name="username" value="" placeholder="User Name">
                     </div>
-                    <div class="form-group">
-                        <label for="password" class="control-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password">
+                    <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <div class="checkbox text-left col-xs-6 no-padding-h">
+                        <label>
+                            <input type="checkbox">
+                            Remember me ? </label>
+                    </div>
+                    <div class="help-block text-right col-xs-6 no-padding-h"><a href="">Forget the password ?</a></div>
+                    <div class="row no-margin">
+                        <button type="button" class="btn btn-primary col-xs-12 p-v-sm" id="loginButton">Login </button><br>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="loginButton">Login</button>
+            <div class="modal-footer text-center">
+
+                Don`t have an account ? <br>
+                <button type="button" class="btn btn-info" id="loginButton">Create account</button>
             </div>
+
         </div>
+        <h5 class="text-black-lt text-center m-v-md font-thin">©2014 Copyright Dynamic admin. All right reserved !!!</h5>
     </div>
 </div>
 
@@ -86,7 +127,7 @@
                         <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li>
+                    <li id="logoutButton">
                         <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                     </li>
                 </ul>
@@ -218,6 +259,12 @@
                 }, function(error){
                     console.log('Error : '+ error);
                 });
+    });
+
+    $('#logoutButton').click(function(event){
+        $('#wrapper').hide();
+        $('#loginModal').modal('show');
+        inAppBIWrapper.destroy();
     });
 
     function toggleLeftSide() {
