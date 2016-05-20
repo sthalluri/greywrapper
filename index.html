@@ -19,7 +19,7 @@
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-dialog">
-        <h2 class="modal-title text-center m-t-md  font-bold text-black-lt" id="exampleModalLabel">APP NAME</h2>
+        <h2 class="modal-title text-center m-t-md  font-bold text-black-lt">APP NAME</h2>
         <div class="modal-content m-t-md">
             <div class="modal-header">
                 <h4 class="modal-title text-center text-black-lt" id="exampleModalLabel">Login to your account</h4>
@@ -46,7 +46,7 @@
             </div>
             <div class="modal-footer text-center">
                 Don`t have an account ? <br>
-                <button type="button" class="btn btn-info" id="loginButton">Create account</button>
+                <button type="button" class="btn btn-info" id="createAccount">Create account</button>
             </div>
         </div>
         <h5 class="text-black-lt text-center m-v-md font-thin">©2016 Copyright InAppBI. All right reserved !!!</h5>
@@ -63,7 +63,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html" style="color:#4D5F71; font-size:17px;">
-                <i class="fa fa-bell-o"></i> You App Name
+                <i class="fa fa-bell-o"></i> <span id="siteTitle"></span>
             </a>
         </div>
         <ul class="nav navbar-nav hidden-xs">
@@ -87,7 +87,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><span id="appname" style="padding-left: 10px;"></span> </a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -129,10 +129,10 @@
     </nav>
 
     <!-- Main Content -->
-    <div id="page-wrapper">
+    <div id="page-wrapper" style="padding: 0px;">
         <div class="container-fluid" style="height:100%; padding: 0px;" id="tpl">&nbsp;</div>
-        <div id="adhocEditor" style="display: none;">
-            <iframe src="" id="adhocEditorFrame" width="100%" height="1200px">
+        <div id="adhocEditor" style="display: none; padding: 0px;">
+            <iframe src="" id="adhocEditorFrame" width="100%" height="1200px" frameborder="0" >
                 <p>Your browser does not support iframes.</p>
             </iframe>
         </div>
@@ -148,6 +148,9 @@
     var inAppBIWrapper = null;
 
     function initShellSite(){
+
+        //Set the site title
+        $('#siteTitle').html(inAppBIWrapper.getTenantInfo().name);
 
         // Render the visualization list
         inAppBIWrapper.getVisualizations('root', function (response) {
@@ -176,6 +179,7 @@
     }
 
     function updateViz(name) {
+        $('#tpl').show();
         $('#dashboard-btn-group').hide();
         $('#adhocEditor').hide();
         $('#page-content-wrapper').show();
@@ -198,6 +202,7 @@
     function showAdhocEditor(id) {
         $('#page-content-wrapper').hide();
         $('#adhocEditor').show();
+        $('#tpl').hide();
         $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
     }
 
@@ -216,8 +221,9 @@
         };
 
         inAppBIWrapper = new InAppBIWrapper(appConfig,
-                function (data) {
+                function (response) {
                     initShellSite();
+                    $('#appname').html(data.username);
                     $('#loginModal').modal('hide');
                     $('#loginForm')[0].reset();
                     $('#wrapper').show();
@@ -235,6 +241,11 @@
     function toggleLeftSide() {
         $('.collapse').hide();
     }
+
+    //Get Tenant Info
+    //https://leschilabs.inappbi.com/inappbi/api/public/getTenant
+
+
 </script>
 
 </body>
