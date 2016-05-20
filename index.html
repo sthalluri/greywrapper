@@ -154,7 +154,7 @@
             var template = '{{#each this}}' +
                     '<li style="list-style-type: none;">' +
                     '   <a href="#" onclick="updateViz(\'{{resourceName}}\')" style="color: #A5ACB3; text-decoration: none;">' +
-                    '       <i class="fa fa-bar-chart"></i>{{name}}</li>' +
+                    '       {{name}}</li>' +
                     '   </a>' +
                     '{{/each}} ';
             var html = ebi.Util.evalHandlebarTemplate(template, response.data, response.initParams);
@@ -166,7 +166,7 @@
             var template = '{{#each this}}' +
                     '   <li style="list-style-type: none;">' +
                     '       <a href="#" onclick="showAdhocEditor(\'{{id}}\')" style="color: #A5ACB3; text-decoration: none;">' +
-                    '           <i class="fa fa-bar-chart"></i>{{name}}</li>' +
+                    '           {{name}}</li>' +
                     '       </a> ' +
                     '   </li>' +
                     '{{/each}} ';
