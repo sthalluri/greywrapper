@@ -34,7 +34,7 @@ body {
     }
 
     #page-wrapper {
-        padding: 10px;
+        padding:10px 10px;
     }
 }
 
@@ -628,5 +628,21 @@ ul.alert-dropdown {
     min-width: 8.3333333333%;
     position: absolute;
     padding: 0;
-    height: 400px !IMPORTANT;
+    min-height: 400px !IMPORTANT;
 	}
+	
+.row .ui-draggable{ margin-top:-20px !important;}
+
+
+.nav-side-menu {
+    top: 37px;
+}
+
+.sidebar-panel {
+    z-index: 999;
+    position: fixed;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
+}
