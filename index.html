@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>inAppBI Demo</title>
+    <title>InAppBI Demo Site</title>
 
     <link href="http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://lil.inappbi.com/inappbi/styles/inappbi.css"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://lil.inappbi.com/inappbi/styles/inappbi.css"/>
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Login Form -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-dialog">
         <!--<h2 class="modal-title text-center m-t-md  font-bold text-black-lt">APP NAME</h2>-->
@@ -54,7 +55,8 @@
 </div>
 
 <div id="wrapper" style="display: none;">
-    <!-- Navigation -->
+
+    <!-- Navigation Menu on the top-->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -99,7 +101,8 @@
                 </ul>
             </li>
         </ul>
-        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
+        <!-- Sidebar Menu Items showing Dashboard Composition, List of Visualizations and Adhoc Editor-->
         <div class="collapse navbar-collapse navbar-ex1-collapse" ng-show="showLeftSide">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
@@ -110,7 +113,7 @@
                 </li>
                 <li class="">
                     <a href="javascript:;" data-toggle="collapse" data-target="#vizList">
-                        <i class="fa fa-wpforms fa-postion"></i> My Dashboards
+                        <i class="fa fa-wpforms fa-postion"></i> Visualizations
                         <i class="fa fa-angle-down pull-right" style="line-height: 26px;"></i>
                     </a>
                     <ul id="vizList" class="collapse sub">
@@ -128,7 +131,7 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Container Panel displaying the visualization -->
     <div id="page-wrapper" style="padding: 0px;">
         <div class="container-fluid" style="height:100%; padding: 0px;" id="tpl">&nbsp;</div>
         <div id="adhocEditor" style="display: none; padding: 0px;">
@@ -139,14 +142,14 @@
     </div>
 </div>
 
-<!-- jQuery -->
+<!-- InAppBI JS File, includes all the required core libraries -->
 <script src="https://lil.inappbi.com/inappbi/scripts/inappbi.js"></script>
 
 <script>
-    //var uiEndPoint = 'http://one.localhost:9000',
 
     var inAppBIWrapper = null;
 
+    // Will initialize the shell site, showing the left menu items and the top menu items
     function initShellSite(){
 
         //Set the site title
@@ -182,14 +185,12 @@
         $('#tpl').show();
         $('#dashboard-btn-group').hide();
         $('#adhocEditor').hide();
-        $('#page-content-wrapper').show();
         inAppBIWrapper.loadByName('tpl', name);
     }
 
     function showDashboardCompile() {
-        var homeDashboardName = 'HomeDashboard';
         $('#adhocEditor').hide();
-        $('#page-content-wrapper').show();
+        var homeDashboardName = 'HomeDashboard';
         var homeDashboard = new inappbi.DashboardRenderer({
             name: homeDashboardName,
             pkg: 'root',
@@ -200,12 +201,12 @@
     }
 
     function showAdhocEditor(id) {
-        $('#page-content-wrapper').hide();
-        $('#adhocEditor').show();
         $('#tpl').hide();
         $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
+        $('#adhocEditor').show();
     }
 
+    // Login related JS
     $('#loginModal').modal('show');
 
     $('#loginButton').click(function (event) {
