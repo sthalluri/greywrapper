@@ -339,7 +339,6 @@ ul.alert-dropdown {
     text-overflow: ellipsis;
     font-size: 12px;
 }
-
 .fa-postion {
     position: relative;
     top: 3px;
@@ -624,7 +623,7 @@ ul.alert-dropdown {
 }
 
 .panel-body {
-    padding: 15px;
+    padding: 15px 10px !important;
     height: 350px;
     overflow-y: scroll;
 }
@@ -652,3 +651,41 @@ ul.alert-dropdown {
     overflow-y: auto;
     box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
 }
+
+.footer-logo {
+    margin-left: 4px;
+}
+
+.footer-section{position: fixed;
+    bottom: 8px;
+    left: 200px;}
+
+.footer-section .text-bottom {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 4px;
+    vertical-align: top;
+	font-style:italic;
+	font-size:10px;
+}
+
+@media (min-width: 768px){
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+#sidebar-wrapper {
+    top: 39px !important;
+}
+
+}
+
+.btn-info {
+    color: #ffffff !important;
+    background-color: #3c86db;
+    border-color: #2979d5;
+}
+
+
