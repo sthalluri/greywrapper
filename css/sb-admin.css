@@ -651,7 +651,7 @@ ul.alert-dropdown {
     margin-left: 4px;
 }
 
-.footer-section{position: absolute;
+.footer-section{position: fixed;
     bottom: 8px;
     left: 200px;}
 
@@ -670,6 +670,11 @@ ul.alert-dropdown {
     margin-bottom: 0;
     text-align: left;
 }
+
+#sidebar-wrapper {
+    top: 39px !important;
+}
+
 }
 
 .btn-info {
@@ -677,3 +682,5 @@ ul.alert-dropdown {
     background-color: #3c86db;
     border-color: #2979d5;
 }
+
+
