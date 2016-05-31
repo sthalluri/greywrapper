@@ -142,7 +142,7 @@
             </a>
             </span>
         </span>
-        <div class="container-fluid" style="height:100%;" id="tpl">&nbsp;</div>
+        <div class="container-fluid" style="height:100%;padding: 0px;" id="tpl">&nbsp;</div>
         <div id="adhocEditor" style="display: none;">
             <iframe src="" id="adhocEditorFrame" width="100%" height="1100px" style="border: 0px;">
                 <p>Your browser does not support iframes.</p>
@@ -214,22 +214,18 @@
 
     function showAdhocEditor(id) {
         $('#tpl').hide();
-        $('#adhocEditorFrame').attr('src',
-                //'http://localhost:9000/#/app/adhoceditor/' + id + '//true')
-                ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
+        $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
         $('#adhocEditor').show();
     }
 
     // Login related JS specific for the shell site
-    $('#loginModal').modal('show');
-
-//    if(!ebi.Util.getAuthToken() || ebi.Util.getAuthToken() === 'null'){
-//
-//    }else{
-//        inAppBIWrapper = new InAppBIWrapper({
-//            apiEndPoint: 'https://lil.inappbi.com/inappbi' //'http://localhost:8081/inappbi'
-//         }, initShellSite);
-//    }
+    if(!ebi.Util.getAuthToken() || ebi.Util.getAuthToken() === 'null' || !ebi.Util.getApiEndPoint()){
+        $('#loginModal').modal('show');
+    }else{
+        inAppBIWrapper = new InAppBIWrapper({
+            apiEndPoint: ebi.Util.getApiEndPoint() //'http://localhost:8081/inappbi'
+        }, initShellSite);
+    }
 
     $('#loginButton').click(function (event) {
         var data = $('#loginForm').serializeArray().reduce(function (obj, item) {
