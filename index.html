@@ -133,22 +133,21 @@
     </nav>
 
     <!-- Main Content -->
-    <div id="page-wrapper">
+    <div id="page-wrapper" style="padding: 0px;">
       <span class="footer-section" id="powered-by">
         <span class="text-bottom italics">Powered by</span>
-        <span class="footer-logo">
-        <a href="http://www.inappbi.com" target="_blank">
-        <span id="footer-logo-dark" class="footer-logo"><a href="http://www.inappbi.com/contact.html"><img src="images/logo-black.png" height="20px"/></a></span>
-        </a>
-        </span>
+            <span class="footer-logo">
+            <a href="http://www.inappbi.com" target="_blank">
+            <span id="footer-logo-dark" class="footer-logo"><a href="http://www.inappbi.com/contact.html"><img src="images/logo-black.png" height="20px"/></a></span>
+            </a>
+            </span>
         </span>
         <div class="container-fluid" style="height:100%;" id="tpl">&nbsp;</div>
         <div id="adhocEditor" style="display: none;">
-            <iframe src="" id="adhocEditorFrame" width="100%" height="1100px">
+            <iframe src="" id="adhocEditorFrame" width="100%" height="1100px" style="border: 0px;">
                 <p>Your browser does not support iframes.</p>
             </iframe>
         </div>
-      
     </div>
 </div>
 
@@ -161,9 +160,11 @@
 
     // Will initialize the shell site, showing the left menu items and the top menu items
     function initShellSite(){
-
         //Set the site title
         $('#siteTitle').html(inAppBIWrapper.getTenantInfo().name);
+
+        //Show the wrapper site
+        $('#wrapper').show();
 
         // Render the visualization list
         inAppBIWrapper.getVisualizations('root', function (response) {
@@ -199,6 +200,7 @@
     }
 
     function showDashboardCompile() {
+        $('#tpl').show();
         $('#adhocEditor').hide();
         var homeDashboardName = 'HomeDashboard';
         var homeDashboard = new inappbi.DashboardRenderer({
@@ -212,12 +214,22 @@
 
     function showAdhocEditor(id) {
         $('#tpl').hide();
-        $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
+        $('#adhocEditorFrame').attr('src',
+                //'http://localhost:9000/#/app/adhoceditor/' + id + '//true')
+                ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
         $('#adhocEditor').show();
     }
 
-    // Login related JS
+    // Login related JS specific for the shell site
     $('#loginModal').modal('show');
+
+//    if(!ebi.Util.getAuthToken() || ebi.Util.getAuthToken() === 'null'){
+//
+//    }else{
+//        inAppBIWrapper = new InAppBIWrapper({
+//            apiEndPoint: 'https://lil.inappbi.com/inappbi' //'http://localhost:8081/inappbi'
+//         }, initShellSite);
+//    }
 
     $('#loginButton').click(function (event) {
         var data = $('#loginForm').serializeArray().reduce(function (obj, item) {
@@ -228,7 +240,7 @@
         var appConfig = {
             username: data.username,
             password: data.password,
-            apiEndPoint: 'https://'+ data.domain.toLowerCase()+ '.inappbi.com/inappbi' //http://one.localhost:8081/inappbi'
+            apiEndPoint: 'https://'+ data.domain.toLowerCase()+ '.inappbi.com/inappbi'
         };
 
         inAppBIWrapper = new InAppBIWrapper(appConfig,

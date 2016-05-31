@@ -624,7 +624,6 @@ ul.alert-dropdown {
 
 .panel-body {
     padding: 15px 10px !important;
-    height: 350px;
     overflow-y: scroll;
 }
 
@@ -656,6 +655,9 @@ ul.alert-dropdown {
     margin-left: 4px;
 }
 
+.fa-cog{
+    color : #eaeaea;
+}
 .footer-section{position: fixed;
     bottom: 8px;
     left: 200px;}
