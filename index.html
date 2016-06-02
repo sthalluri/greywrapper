@@ -1,295 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>inAppBI Demo</title>
-<link href="http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://lil.inappbi.com/inappbi/styles/inappbi.css"/>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<!-- Custom CSS -->
-<link href="css/sb-admin.css" rel="stylesheet">
+    <title>inAppBI Demo</title>
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://lil.inappbi.com/inappbi/styles/inappbi.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 <body>
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" data-backdrop="static">
-  <div class="modal-dialog">
-    <h2 class="modal-title text-center m-t-md  font-bold text-black-lt" id="exampleModalLabel">APP NAME</h2>
-    <div class="modal-content m-t-md">
-      <div class="modal-header">
-        <h4 class="modal-title text-center text-black-lt" id="exampleModalLabel">Login to your account</h4>
-      </div>
-      <div class="modal-body" >
-        <form name="form" id="loginForm" class="form-horizontal" enctype="multipart/form-data" method="POST">
-          <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-            <input id="domain" type="text" class="form-control" name="domain" value="" placeholder="Domain">
-          </div>
-          <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="username" type="text" class="form-control" name="username" value="" placeholder="User Name">
-          </div>
-          <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-          </div>
-          <div class="checkbox text-left col-xs-6 no-padding-h">
-            <label>
-              <input type="checkbox">
-              Remember me ? </label>
-          </div>
-          <div class="help-block text-right col-xs-6 no-padding-h"><a href="">Forget the password ?</a></div>
-          <div class="row no-margin">
-            <button type="button" class="btn btn-info col-xs-12 p-v-sm" id="loginButton">Login </button>
-            <br>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer text-center"> Don`t have an account ? <br>
-        <button type="button" class="btn btn-info" id="loginButton">Create account</button>
-      </div>
+    <div class="modal-dialog">
+        <h2 class="modal-title text-center m-t-md  font-bold text-black-lt">YOUR APP NAME HERE</h2>
+        <div class="modal-content m-t-md">
+            <div class="modal-header">
+                <h4 class="modal-title text-center text-black-lt" id="exampleModalLabel">Login to your account</h4>
+            </div>
+            <div class="modal-body" >
+                <form name="form" id="loginForm" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                    <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                        <input id="domain" type="text" class="form-control" name="domain" value="" placeholder="Domain">
+                    </div>
+                    <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="username" type="text" class="form-control" name="username" value="" placeholder="User Name">
+                    </div>
+                    <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                    <div class="checkbox text-left col-xs-6 no-padding-h">
+                        <label>
+                            <input type="checkbox">Remember me ?
+                        </label>
+                    </div>
+                    <div class="help-block text-right col-xs-6 no-padding-h"><a href="">Forget the password ?</a></div>
+                    <div class="row no-margin">
+                        <button type="button" class="btn btn-info col-xs-12 p-v-sm" id="loginButton">Login </button><br>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer text-center"> Don`t have an account ? <br>
+                <button type="button" class="btn btn-info" id="createAccount">Create account</button>
+            </div>
+        </div>
+        <h5 class="text-black-lt text-center m-v-md font-thin">©2016 Copyright Dynamic admin. All right reserved !!!</h5>
     </div>
-    <h5 class="text-black-lt text-center m-v-md font-thin">©2014 Copyright Dynamic admin. All right reserved !!!</h5>
-  </div>
 </div>
 <div id="wrapper" style="display: none;">
- 
- <!-- overlay Start -->
- 
- 
- <div class="overly-bg">
- 
- 
- <div class="contact-overlay">
- 
- <img src="images/logo-white.png"/>
- 
-<h2 class="text-white"> Contact Us Today</h2>
-<h5 class="text-white">To learn more about this tool request a email </h5>
-<a href="http://www.inappbi.com/contact.html" class="btn btn-info btn-md">Contact</a>&nbsp;&nbsp;<span class="text-grey"> (or) </span>&nbsp;&nbsp; <a href="#" style="text-decoration:underline; color:#FFAF2E;">Skip Tour</a>
- </div>
-    <div class="pull-left">
-      <div class="pull-left left-arrow">  <!-- <img src="images/rectshape.png" height="55"/>
-      <h5 style="position: relative; right: -9px; top: 13px; float: right;">Homepage</h5>-->
-      </div>
-      <br>
-        <div class="pull-left left-arrow"> <img src="images/rectshape.png" height="53"/>
-        <h5 style="position: relative; right: -9px; top: 13px; float: right;">Your users can create thier own custom dashboards</h5>
-      </div>
-      <br>
-        <div class="pull-left left-arrow"> <img src="images/rectshape.png" height="53"/>
-        <h5 style="position: relative; right: -9px; top: 13px; float: right;">Can create compelling story telling behind your data </h5>
-      </div>
-      <br>
-        <div class="pull-left left-arrow"><img src="images/rectshape.png" height="53"/>
-        <h5 style="position: relative; right: -9px; top: 13px; float: right;">Provide self-service query capabilities for your user</h5>
-      </div>
-    
-    </div>
-    <div class="pull-right">
-    <!--  <div class="pull-right top-arrow"> <img src="images/whitetop-arrow.png" width="20"/><br>
-        <h5 style="position: relative; right: 10px; top: -5px;">User Profile/Settings options</h5>
-      </div>-->
-      <div class="pull-right top-arrow1"> <img src="images/whitetop-arrow.png" width="20"/><br>
-        <h5 style="position: relative; left: -5px;
-    top: -5px;">Alerts</h5>
-      </div>
-      <div class="pull-right top-arrow2"> <img src="images/whiteright-arrow copy.png" width="46"/><br>
-        <h5 style="    position: relative;
-    left: -32px;
-    top: -5px;">Notification Mails</h5>
-      </div>
-    </div>
-  </div>
- 
- 
- <!-- overlay End -->
- 
-  
-  <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"> 
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="index.html" style="color:#4D5F71; font-size:17px;"> <i class="fa fa-bell-o"></i> Company Logo </a> </div>
-    <ul class="nav navbar-nav hidden-xs">
-      <li class="toggle-sidebar sidebar-toggle-box"> <a href="#" style="    padding:9px 11px;" onclick="toggleLeftSide()"> <i class="fa fa-reorder" style="color:#fff; font-size:16px;"></i> <span class="sr-only">Collapse sidebar</span> </a> </li>
-    </ul>
-    <!-- Top Menu Items -->
-    <ul class="nav navbar-right top-nav">
-      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i></a>
-        <ul class="dropdown-menu message-dropdown">
-         
-        </ul>
-      </li>
-      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> </a>
-        <ul class="dropdown-menu message-dropdown"> <li class="message-preview"> <a href="#">
-            <div class="media"> <span class="pull-left"> <i class="fa fa-bar-chart alert-icon" aria-hidden="true"></i> </span>
-              <div class="media-body">
-                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 8:32 PM</p>
-                <p>Total Sales 10% up from last month (Some some icons in the text)</p>
-              </div>
+    <!-- overlay Start -->
+    <div class="overly-bg">
+        <div class="contact-overlay">
+            <h2 class="text-white">A Sample Application with 4 embedded key features of InAppBI</h2>
+            <!--<h5 class="text-white">Add the highlighted features to your application quickly</h5>-->
+            <a href="#" class="btn btn-info btn-md close-overlay">Close</a>
+        </div>
+        <div class="pull-left">
+            <div class="pull-left left-arrow">
             </div>
-            </a> </li>
-          <li class="message-preview"> <a href="#">
-            <div class="media"> <span class="pull-left"> <i class="fa fa-line-chart alert-icon" aria-hidden="true"></i> </span>
-              <div class="media-body">
-                <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 11:32 AM</p>
-                <p>Profit this month is $23,230 up by 5% since last month</p>
-              </div>
+            <br>
+            <div class="pull-left left-arrow"> <img src="images/rectshape.png" width="200"/>
+             <h4 style="position: absolute; left: 15px; top: 9px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-desktop fa-postion2"></i> My Dashboard</a></h5>
+                <h3 style="position: relative; right: -22px; top: -4px; float: right; color: #ddd;">1. Enable your users to create their own custom dashboards</h3>
             </div>
-            </a> </li>
-          <li class="message-preview"> <a href="#">
-            <div class="media"> <span class="pull-left"> <i class="fa fa-pie-chart alert-icon" aria-hidden="true"></i> </span>
-              <div class="media-body">
-                <p class="small text-muted"><i class="fa fa-clock-o"></i> 1 Day to go</p>
-                <p>Your best performig store is
-                  <bold>Thrift Store</bold>
-                  They are consistently perfoming in 1st place for the last three months</p>
-              </div>
+            <br>
+            <div class="pull-left left-arrow"> <img src="images/rectshape.png" width="200"/>
+             <h4 style="position: absolute; left: 15px; top: 6px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-wpforms fa-postion2"></i> Visualizations </a></h5>            
+                <h3 style="position: relative; right: -22px; top: -2px; float: right; color: #ddd;">2. Provide compelling story telling behind your data </h3>
             </div>
-            </a> </li>
-          <li class="message-footer"> <a href="#">Read All New Messages</a> </li>
-        
-        </ul>
-      </li>
-      <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John</a>
-        <ul class="dropdown-menu">
-          <li> <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a> </li>
-          <li class="divider"></li>
-          <li id="logoutButton"> <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a> </li>
-        </ul>
-      </li>
-    </ul>
-    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse" ng-show="showLeftSide">
-      <ul class="nav navbar-nav side-nav">
-        <li class="">
-         	<a href="index.html"><i class="fa fa-building-o fa-postion"></i> Home</a> 
-         </li>
-        <li class=""> <a href="#" onclick="showDashboardCompile()"><i class="fa fa-desktop fa-postion"></i> My Dashboard</a> </li>
-        <li class=""> <a href="javascript:;" data-toggle="collapse" data-target="#vizList"> <i class="fa fa-wpforms fa-postion"></i> My Dashboards <i class="fa fa-angle-down pull-right" style="line-height: 26px;"></i> </a>
-          <ul id="vizList" class="collapse sub">
-          </ul>
-        </li>
-        <li class=""> <a href="javascript:;" data-toggle="collapse" data-target="#dataModelList"> <i class="fa fa-hourglass-o fa-postion" aria-hidden="true"></i> Data Models <i class="fa fa-angle-down pull-right" style="line-height: 26px;"></i> </a>
-          <ul id="dataModelList" class="collapse sub">
-          </ul>
-        </li>
-      </ul>
+            <br>
+            <div class="pull-left left-arrow"><img src="images/rectshape.png" width="200"/>
+             <h4 style="position: absolute; left: 15px; top: 6px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-hourglass-o fa-postion2" aria-hidden="true"></i> Data Models</a></h5>            
+                <h3 style="position: relative; right: -22px; top: -1px; float: right; color: #ddd;">3. Provide Self Service Reporting for your users</h3>
+            </div>
+        </div>
+        <div class="pull-right">
+            <div class="pull-right top-arrow1"> <img src="images/whitetop-arrow.png" width="20"/>
+            <i class="fa fa-bell" style="position: absolute; left: 41px; top: -26px; float: right; font-size: 20px; color: #E4971B;"></i>
+                <h3 style="position: relative; left: -64px; top: -14px; width: 200px; color: #ddd;">4. Push Data Insights</h3>
+            </div>
+        </div>
     </div>
-  </nav>
-  
-  <!-- Main Content -->
-  <div id="page-wrapper"> <span class="footer-section" id="powered-by"> <span class="text-bottom italics">Powered by</span><br>
- <span class="footer-logo"> <a href="http://www.inappbi.com" target="_blank"> <span id="footer-logo-dark" class="footer-logo"><a href="http://www.inappbi.com/contact.html"><img src="images/logo-white.png" height="35px"/></a></span> </a> </span> </span>
-    <div class="container-fluid" style="height:100%;" id="tpl">&nbsp;</div>
-    <div id="adhocEditor" style="display: none;">
-      <iframe src="" id="adhocEditorFrame" width="100%" height="1100px">
-      <p>Your browser does not support iframes.</p>
-      </iframe>
+
+    <!-- overlay End -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="index.html" style="color:#4D5F71; font-size:17px;"> <i class="fa fa-bell-o"></i> <span id="siteTitle"></span> </a> </div>
+        <ul class="nav navbar-nav hidden-xs">
+            <li class="toggle-sidebar sidebar-toggle-box"> <a href="#" style="    padding:9px 11px;" onclick="toggleLeftSide()"> <i class="fa fa-reorder" style="color:#fff; font-size:16px;"></i> <span class="sr-only">Collapse sidebar</span> </a> </li>
+        </ul>
+        <!-- Top Menu Items -->
+        <ul class="nav navbar-right top-nav">
+          <div class="pull-left m-t-sm">
+                <a href="http://www.inappbi.com/contact.html" class="btn btn-info">Contact</a>
+               
+            </div>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" style="color: #d9534f;"></i></a>
+                <ul class="dropdown-menu message-dropdown">
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media"> <span class="pull-left"> <i class="fa fa-bar-chart alert-icon" aria-hidden="true"></i> </span>
+                                <div class="media-body">
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 8:32 PM</p>
+                                    <p>Total Sales 10% up from last month (Some some icons in the text)</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media"> <span class="pull-left"> <i class="fa fa-line-chart alert-icon" aria-hidden="true"></i> </span>
+                                <div class="media-body">
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 11:32 AM</p>
+                                    <p>Profit this month is $23,230 up by 5% since last month</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media"> <span class="pull-left"> <i class="fa fa-pie-chart alert-icon" aria-hidden="true"></i> </span>
+                                <div class="media-body">
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> 1 Day to go</p>
+                                    <p>Your best performig store is
+                                        <bold>Thrift Store</bold>
+                                        They are consistently perfoming in 1st place for the last three months</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-footer"> <a href="#">Read All New Messages</a> </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span id="appname" ></span></a>
+                <ul class="dropdown-menu">
+                    <li> <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a> </li>
+                    <li class="divider"></li>
+                    <li id="logoutButton"> <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a> </li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse" ng-show="showLeftSide">
+            <ul class="nav navbar-nav side-nav">
+                <li class="">
+                    <a href="#" onclick="showHome()"><i class="fa fa-building-o fa-postion"></i> Home</a>
+                </li>
+                <li class=""> <a href="#" onclick="showDashboardCompile()"><i class="fa fa-desktop fa-postion"></i>My Dashboard</a> </li>
+                <li class="">
+                    <a href="javascript:;" data-toggle="collapse" data-target="#vizList">
+                        <i class="fa fa-wpforms fa-postion"></i> Visualizations <i class="fa fa-angle-down pull-right" style="line-height: 26px;"></i>
+                    </a>
+                    <ul id="vizList" class="collapse sub"></ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;" data-toggle="collapse" data-target="#dataModelList">
+                        <i class="fa fa-hourglass-o fa-postion" aria-hidden="true"></i> Data Models <i class="fa fa-angle-down pull-right" style="line-height: 26px;"></i>
+                    </a>
+                    <ul id="dataModelList" class="collapse sub"></ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="page-wrapper">
+        <span class="footer-section" id="powered-by"> <span class="text-bottom italics">Powered by</span><br>
+            <span class="footer-logo"> <a href="http://www.inappbi.com" target="_blank">
+                <span id="footer-logo-dark" class="footer-logo"><a href="http://www.inappbi.com/contact.html"><img src="images/logo-white.png" height="35px"/></a></span> </a>
+            </span>
+        </span>
+        <div class="container-fluid" style="height:100%;padding: 0px;" id="tpl">&nbsp;</div>
+        <div id="adhocEditor" style="display: none;">
+            <iframe src="" id="adhocEditorFrame" width="100%" style="border: 0px;" height="1100px">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+        </div>
     </div>
-  </div>
 </div>
 
-<!-- jQuery --> 
-<script src="https://lil.inappbi.com/inappbi/scripts/inappbi.js"></script> 
+<!-- jQuery -->
+<script src="https://lil.inappbi.com/inappbi/scripts/inappbi.js"></script>
 <script>
-    //var uiEndPoint = 'http://one.localhost:9000',
 
-    var inAppBIWrapper = null;
+        var inAppBIWrapper = null;
 
-    function initShellSite(){
+        // Will initialize the shell site, showing the left menu items and the top menu items
+        function initShellSite(){
+            //Set the site title
+            $('#siteTitle').html(inAppBIWrapper.getTenantInfo().name);
 
-        // Render the visualization list
-        inAppBIWrapper.getVisualizations('root', function (response) {
-            var template = '{{#each this}}' +
-                    '<li style="list-style-type: none;">' +
-                    '   <a href="#" onclick="updateViz(\'{{resourceName}}\')" style="color: #A5ACB3; text-decoration: none;">' +
-                    '       <i class="fa fa-bar-chart"></i>{{name}}</li>' +
-                    '   </a>' +
-                    '{{/each}} ';
-            var html = ebi.Util.evalHandlebarTemplate(template, response.data, response.initParams);
-            $('#vizList').html(html);
+            //Show the wrapper site
+            $('#wrapper').show();
+
+            // Render the visualization list
+            inAppBIWrapper.getVisualizations('root', function (response) {
+                var template = '{{#each this}}' +
+                        '<li style="list-style-type: none;">' +
+                        '   <a href="#" onclick="updateViz(\'{{resourceName}}\')" style="color: #A5ACB3; text-decoration: none;">' +
+                        '       {{name}}</li>' +
+                        '   </a>' +
+                        '{{/each}} ';
+                var html = ebi.Util.evalHandlebarTemplate(template, response.data, response.initParams);
+                $('#vizList').html(html);
+            });
+
+            // Render list of adhoc data models
+            inAppBIWrapper.getDataModels('root', function (response) {
+                var template = '{{#each this}}' +
+                        '   <li style="list-style-type: none;">' +
+                        '       <a href="#" onclick="showAdhocEditor(\'{{id}}\')" style="color: #A5ACB3; text-decoration: none;">' +
+                        '           {{name}}</li>' +
+                        '       </a> ' +
+                        '   </li>' +
+                        '{{/each}} ';
+                var html = ebi.Util.evalHandlebarTemplate(template, response.data);
+                $('#dataModelList').html(html);
+            });
+        }
+
+        function updateViz(name) {
+            $('#tpl').show();
+            $('#dashboard-btn-group').hide();
+            $('#adhocEditor').hide();
+            inAppBIWrapper.loadByName('tpl', name);
+        }
+
+        function showDashboardCompile() {
+            $('#tpl').show();
+            $('#adhocEditor').hide();
+            var homeDashboardName = 'HomeDashboard';
+            var homeDashboard = new inappbi.DashboardRenderer({
+                name: homeDashboardName,
+                pkg: 'root',
+                visualizationType: 'Dashboard',
+                dashboardLayout: []
+            }, inAppBIWrapper);
+            homeDashboard.render('tpl');
+        }
+
+        function showAdhocEditor(id) {
+            $('#tpl').hide();
+            $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
+            $('#adhocEditor').show();
+        }
+
+        // Login related JS specific for the shell site
+        if(!ebi.Util.getAuthToken() || ebi.Util.getAuthToken() === 'null' || !ebi.Util.getApiEndPoint()){
+            $('#loginModal').modal('show');
+        }else{
+            inAppBIWrapper = new InAppBIWrapper({
+                apiEndPoint: ebi.Util.getApiEndPoint() //'http://localhost:8081/inappbi'
+            }, initShellSite);
+        }
+
+        $('#loginButton').click(function (event) {
+            var data = $('#loginForm').serializeArray().reduce(function (obj, item) {
+                obj[item.name] = item.value;
+                return obj;
+            }, {});
+
+            var appConfig = {
+                username: data.username,
+                password: data.password,
+                apiEndPoint: 'https://'+ data.domain.toLowerCase()+ '.inappbi.com/inappbi'
+            };
+
+            inAppBIWrapper = new InAppBIWrapper(appConfig,
+                    function (response) {
+                        initShellSite();
+                        $('#appname').html(data.username);
+                        $('#loginModal').modal('hide');
+                        $('#loginForm')[0].reset();
+                        $('#wrapper').show();
+                    }, function(error){
+                        console.log('Error : '+ error);
+                    });
         });
 
-        // Render list of adhoc data models
-        inAppBIWrapper.getDataModels('root', function (response) {
-            var template = '{{#each this}}' +
-                    '   <li style="list-style-type: none;">' +
-                    '       <a href="#" onclick="showAdhocEditor(\'{{id}}\')" style="color: #A5ACB3; text-decoration: none;">' +
-                    '           <i class="fa fa-bar-chart"></i>{{name}}</li>' +
-                    '       </a> ' +
-                    '   </li>' +
-                    '{{/each}} ';
-            var html = ebi.Util.evalHandlebarTemplate(template, response.data);
-            $('#dataModelList').html(html);
+        $('#logoutButton').click(function(event){
+            $('#wrapper').hide();
+            $('#loginModal').modal('show');
+            inAppBIWrapper.destroy();
         });
-    }
 
-    function updateViz(name) {
-        $('#dashboard-btn-group').hide();
-        $('#adhocEditor').hide();
-        $('#page-content-wrapper').show();
-        inAppBIWrapper.loadByName('tpl', name);
-    }
+        //Other utility functions
+        function toggleLeftSide() {
+            $('.collapse').hide();
+        }
 
-    function showDashboardCompile() {
-        var homeDashboardName = 'HomeDashboard';
-        $('#adhocEditor').hide();
-        $('#page-content-wrapper').show();
-        var homeDashboard = new inappbi.DashboardRenderer({
-            name: homeDashboardName,
-            pkg: 'root',
-            visualizationType: 'Dashboard',
-            dashboardLayout: []
-        }, inAppBIWrapper);
-        homeDashboard.render('tpl');
-    }
+        function showHome(){
+            updateViz('sample.HomeDashboard');
+        }
 
-    function showAdhocEditor(id) {
-        $('#page-content-wrapper').hide();
-        $('#adhocEditor').show();
-        $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
-    }
+        $('.close-overlay').click(function(){
+            $('.overly-bg').hide();
+            showHome();
+        });
 
-    $('#loginModal').modal('show');
-
-    $('#loginButton').click(function (event) {
-        var loginInfo = $('form').serializeArray();
-        var data = $('#loginForm').serializeArray().reduce(function (obj, item) {
-            obj[item.name] = item.value;
-            return obj;
-        }, {});
-
-        var appConfig = {
-            username: data.username,
-            password: data.password,
-            apiEndPoint: 'https://'+ data.domain.toLowerCase()+ '.inappbi.com/inappbi' //http://one.localhost:8081/inappbi'
-        };
-
-        inAppBIWrapper = new InAppBIWrapper(appConfig,
-                function (data) {
-                    console.log('success:' + data);
-                    initShellSite();
-                    $('#loginModal').modal('hide');
-                    $('#wrapper').show();
-                }, function(error){
-                    console.log('Error : '+ error);
-                });
-    });
-
-    $('#logoutButton').click(function(event){
-        $('#wrapper').hide();
-        $('#loginModal').modal('show');
-        inAppBIWrapper.destroy();
-    });
-
-    function toggleLeftSide() {
-        $('.collapse').hide();
-    }
-
-    console.log(window.localStorage['ngStorage-token']);
-</script>
+    </script>
 </body>
 </html>
+
+
