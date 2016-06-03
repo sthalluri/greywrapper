@@ -788,3 +788,11 @@ ul.alert-dropdown {
     color: #333;
     background-color: transparent;
 }
+
+@media screen and (min-width: 720px) {
+    .navbar-inverse .navbar-nav > li > a {
+        color: #fff;
+        font-size: 13px;
+        line-height: 22px;
+    }
+}
