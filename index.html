@@ -26,27 +26,27 @@
             <div class="modal-body" >
                 <form name="form" id="loginForm" class="form-horizontal" enctype="multipart/form-data" method="POST">
                     <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                        <input id="domain" type="text" class="form-control" name="domain" value="" placeholder="Domain">
+                        <input id="domain" type="text" class="form-control" name="domain" placeholder="Domain" value="demo">
                     </div>
                     <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="username" type="text" class="form-control" name="username" value="" placeholder="User Name">
+                        <input id="username" type="text" class="form-control" name="username" placeholder="User Name"  value="demouser">
                     </div>
                     <div class="input-group m-v-sm"> <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                        <input id="password" type="password" class="form-control" name="password" placeholder="Password" value="demopwd">
                     </div>
                     <div class="checkbox text-left col-xs-6 no-padding-h">
                         <label>
                             <input type="checkbox">Remember me ?
                         </label>
                     </div>
-                    <div class="help-block text-right col-xs-6 no-padding-h"><a href="">Forget the password ?</a></div>
+                    <!--<div class="help-block text-right col-xs-6 no-padding-h"><a href="">Forget the password ?</a></div>-->
                     <div class="row no-margin">
                         <button type="button" class="btn btn-info col-xs-12 p-v-sm" id="loginButton">Login </button><br>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer text-center"> Don`t have an account ? <br>
-                <button type="button" class="btn btn-info" id="createAccount">Create account</button>
+            <div class="modal-footer text-center"> Credentials: demouser/demopwd<br>
+                <!--<button type="button" class="btn btn-info" id="createAccount">Create account</button>-->
             </div>
         </div>
         <h5 class="text-black-lt text-center m-v-md font-thin">©2016 Copyright Dynamic admin. All right reserved !!!</h5>
@@ -54,55 +54,52 @@
 </div>
 <div id="wrapper" style="display: none;">
     <!-- overlay Start -->
-    <div class="overly-bg">
+    <div class="overly-bg hidden-xs">
         <div class="contact-overlay">
-            <h2 class="text-white">A Sample Application with 4 embedded key features of InAppBI</h2>
-            <!--<h5 class="text-white">Add the highlighted features to your application quickly</h5>-->
+            <h2 class="text-white">A Demo Application with 4 embedded key features of InAppBI</h2>
             <a href="#" class="btn btn-info btn-md close-overlay">Close</a>
         </div>
         <div class="pull-left">
             <div class="pull-left left-arrow">
             </div>
-            <br>
-            <div class="pull-left left-arrow"> <img src="images/rectshape.png" width="200"/>
-             <h4 style="position: absolute; left: 15px; top: 9px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-desktop fa-postion2"></i> My Dashboard</a></h5>
-                <h3 style="position: relative; right: -22px; top: -4px; float: right; color: #ddd;">1. Enable your users to create their own custom dashboards</h3>
+            <br/>
+            <div class="pull-left left-arrow"><img src="images/rectshape.png" width="200"/>
+                <h4 style="position: absolute; left: 15px; top: 9px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-desktop fa-postion2"></i> My Dashboard</a></h4>
+                <h4 style="position: relative; right: -22px; top: -4px; float: right; color: #ddd;">1. Enable your users to create their own custom dashboards</h4>
             </div>
-            <br>
-            <div class="pull-left left-arrow"> <img src="images/rectshape.png" width="200"/>
-             <h4 style="position: absolute; left: 15px; top: 6px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-wpforms fa-postion2"></i> Visualizations </a></h5>            
+            <br/>
+            <div class="pull-left left-arrow"><img src="images/rectshape.png" width="200"/>
+                <h4 style="position: absolute; left: 15px; top: 6px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-wpforms fa-postion2"></i> Visualizations </a></h4>
                 <h3 style="position: relative; right: -22px; top: -2px; float: right; color: #ddd;">2. Provide compelling story telling behind your data </h3>
             </div>
             <br>
             <div class="pull-left left-arrow"><img src="images/rectshape.png" width="200"/>
-             <h4 style="position: absolute; left: 15px; top: 6px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-hourglass-o fa-postion2" aria-hidden="true"></i> Data Models</a></h5>            
+                <h4 style="position: absolute; left: 15px; top: 6px; float: right; font-size: 16px; color: #E4971B;"><i class="fa fa-hourglass-o fa-postion2" aria-hidden="true"></i> Data Models</a></h4>
                 <h3 style="position: relative; right: -22px; top: -1px; float: right; color: #ddd;">3. Provide Self Service Reporting for your users</h3>
             </div>
         </div>
         <div class="pull-right">
-            <div class="pull-right top-arrow1"> <img src="images/whitetop-arrow.png" width="20"/>
-            <i class="fa fa-bell" style="position: absolute; left: 41px; top: -26px; float: right; font-size: 20px; color: #E4971B;"></i>
+            <div class="pull-right top-arrow1"><img src="images/whitetop-arrow.png" width="20"/>
+                <i class="fa fa-bell" style="position: absolute; left: 41px; top: -26px; float: right; font-size: 20px; color: #E4971B;"></i>
                 <h3 style="position: relative; left: -64px; top: -14px; width: 200px; color: #ddd;">4. Push Data Insights</h3>
             </div>
         </div>
     </div>
-
     <!-- overlay End -->
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> </button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>  <span class="icon-bar"></span>  <span class="icon-bar"></span></button>
             <a class="navbar-brand" href="index.html" style="color:#4D5F71; font-size:17px;"> <i class="fa fa-bell-o"></i> <span id="siteTitle"></span> </a> </div>
         <ul class="nav navbar-nav hidden-xs">
             <li class="toggle-sidebar sidebar-toggle-box"> <a href="#" style="    padding:9px 11px;" onclick="toggleLeftSide()"> <i class="fa fa-reorder" style="color:#fff; font-size:16px;"></i> <span class="sr-only">Collapse sidebar</span> </a> </li>
         </ul>
         <!-- Top Menu Items -->
-        <ul class="nav navbar-right top-nav">
+        <ul class="nav navbar-right top-nav hidden-xs">
           <div class="pull-left m-t-sm">
-                <a href="http://www.inappbi.com/contact.html" class="btn btn-info">Contact</a>
-               
+                <a href="http://www.inappbi.com/getaccess.html" class="btn btn-info" target="_blank"><i class="fa fa-arrow-circle-right"></i> Contact Us </a>
             </div>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" style="color: #d9534f;"></i></a>
@@ -139,7 +136,6 @@
                             </div>
                         </a>
                     </li>
-                    <li class="message-footer"> <a href="#">Read All New Messages</a> </li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -155,7 +151,7 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse" ng-show="showLeftSide">
             <ul class="nav navbar-nav side-nav">
-                <li class="">
+                <li class="active">
                     <a href="#" onclick="showHome()"><i class="fa fa-building-o fa-postion"></i> Home</a>
                 </li>
                 <li class=""> <a href="#" onclick="showDashboardCompile()"><i class="fa fa-desktop fa-postion"></i>My Dashboard</a> </li>
@@ -172,12 +168,60 @@
                     <ul id="dataModelList" class="collapse sub"></ul>
                 </li>
             </ul>
+            <ul class="nav navbar-right top-nav visible-xs-block">
+          
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" style="color: #d9534f;"></i></a>
+                <ul class="dropdown-menu message-dropdown">
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media"> <span class="pull-left"> <i class="fa fa-bar-chart alert-icon" aria-hidden="true"></i> </span>
+                                <div class="media-body">
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 8:32 PM</p>
+                                    <p>Total Sales 10% up from last month (Some some icons in the text)</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media"> <span class="pull-left"> <i class="fa fa-line-chart alert-icon" aria-hidden="true"></i> </span>
+                                <div class="media-body">
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 11:32 AM</p>
+                                    <p>Profit this month is $23,230 up by 5% since last month</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="message-preview">
+                        <a href="#">
+                            <div class="media"> <span class="pull-left"> <i class="fa fa-pie-chart alert-icon" aria-hidden="true"></i> </span>
+                                <div class="media-body">
+                                    <p class="small text-muted"><i class="fa fa-clock-o"></i> 1 Day to go</p>
+                                    <p>Your best performig store is
+                                        <bold>Thrift Store</bold>
+                                        They are consistently perfoming in 1st place for the last three months</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span id="appname" ></span></a>
+                <ul class="dropdown-menu">
+                    <li> <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a> </li>
+                    <li class="divider"></li>
+                    <li id="logoutButton"> <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a> </li>
+                </ul>
+            </li>
+        </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <div id="page-wrapper">
-        <span class="footer-section" id="powered-by"> <span class="text-bottom italics">Powered by</span><br>
+        <span class="footer-section  hidden-xs" id="powered-by"> <span class="text-bottom italics">Powered by</span><br>
             <span class="footer-logo"> <a href="http://www.inappbi.com" target="_blank">
                 <span id="footer-logo-dark" class="footer-logo"><a href="http://www.inappbi.com/contact.html"><img src="images/logo-white.png" height="35px"/></a></span> </a>
             </span>
@@ -212,7 +256,7 @@
                         '   <a href="#" onclick="updateViz(\'{{resourceName}}\')" style="color: #A5ACB3; text-decoration: none;">' +
                         '       {{name}}</li>' +
                         '   </a>' +
-                        '{{/each}} ';
+                        '{{/each}}';
                 var html = ebi.Util.evalHandlebarTemplate(template, response.data, response.initParams);
                 $('#vizList').html(html);
             });
@@ -262,7 +306,7 @@
             $('#loginModal').modal('show');
         }else{
             inAppBIWrapper = new InAppBIWrapper({
-                apiEndPoint: ebi.Util.getApiEndPoint() //'http://localhost:8081/inappbi'
+                apiEndPoint: ebi.Util.getApiEndPoint()
             }, initShellSite);
         }
 
