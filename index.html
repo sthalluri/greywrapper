@@ -227,7 +227,8 @@
             </span>
         </span>
         <div class="container-fluid" style="height:100%;padding: 0px;" id="tpl">&nbsp;</div>
-        <div id="adhocEditor" style="display: none;">
+        <div class="hidden-lg">Adhoc editor not supported for mobile interface</div>
+        <div id="adhocEditor" style="display: none;" class="hidden-xs">
             <iframe src="" id="adhocEditorFrame" width="100%" style="border: 0px;" height="1100px">
                 <p>Your browser does not support iframes.</p>
             </iframe>
@@ -236,7 +237,7 @@
 </div>
 
 <!-- jQuery -->
-<script src="https://lil.inappbi.com/inappbi/scripts/inappbi.js?_dc=v0.1"></script>
+<script src="https://lil.inappbi.com/inappbi/scripts/inappbi.js?_dc=v0.01"></script>
 <script>
 
         var inAppBIWrapper = null;
@@ -298,7 +299,8 @@
 
         function showAdhocEditor(id) {
             $('#tpl').hide();
-            $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true')
+            $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true/'+ ebi.Util.getAuthToken().replace('"','').replace('"',''));
+            //$('#adhocEditorFrame').attr('src','https://demo.inappbi.com/inappbi//#/app/adhoceditor/5752595016de1f2720db7896//true/eyJhbGciOiJQQkVTMi1IUzI1NitBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwicDJjIjo4MTkyLCJwMnMiOiI4Sks0cmh6Y0RZdE9GMkR6In0.Go5wv_At0R5zuagxCjJfM6XKRAAG-YVewQID1PFqk-g6h5yKtj-QMQ.7ZHpZRDbUYSOP2SRZIwfpg.jJWFB0d-J1lqjcZs-Ke7ApLj9M0gbIa_lJyKa-_NqYrYYYQD0pL3CgvdV9FL4agAOKyvc0RChiSkL-dkRKDD4d_ZgAK4HQ342ajtZfnTWAfR1GD7PDYtDqmokbSCnN_kWLYNrHsRwTuSmghwTcKG88rj0XNYNHmH8NkHuC8ATFs.izgjfhOnVjAtLltn5W2tXA');
             $('#adhocEditor').show();
         }
 
