@@ -599,7 +599,7 @@ ul.alert-dropdown {
     width: 280px;
     top: 12%;
     z-index: 99;
-    right: 13px;
+    right: 100px;
 }
 
 .btn-info {
@@ -647,7 +647,7 @@ ul.alert-dropdown {
 }
 
 .fa-cog{
-    color : #eaeaea;
+    color : #C1BCBC;
 }
 .footer-section{position: fixed;
     bottom: 8px;
