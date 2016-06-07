@@ -757,6 +757,10 @@ ul.alert-dropdown {
     margin-top: 9px;
 }
 
+.bg-grey-dk2 {
+    background: #e1dfe2 !important;
+}
+
 .fa-postion2 {
     position: relative;
     top: 1px;
