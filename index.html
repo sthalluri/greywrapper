@@ -280,7 +280,7 @@
             $('#dashboard-btn-group').hide();
             $('#adhocEditor').hide();
             inAppBIWrapper.loadByName('tpl', name);
-            ga('send', 'event', 'viz', 'play', name);
+            ga('send', 'event', location.href, 'play', name);
         }
 
         function showDashboardCompile() {
@@ -294,14 +294,14 @@
                 dashboardLayout: []
             }, inAppBIWrapper);
             homeDashboard.render('tpl');
-            ga('send', 'event', 'viz', 'play', 'MyDash');
+            ga('send', 'event', location.href, 'play', 'MyDash');
         }
 
         function showAdhocEditor(id) {
             $('#tpl').hide();
             $('#adhocEditorFrame').attr('src', ebi.Util.getApiEndPoint() + '/#/app/adhoceditor/' + id + '//true/'+ ebi.Util.getAuthToken().replace('"','').replace('"',''));
             $('#adhocEditor').show();
-            ga('send', 'event', 'viz', 'play', 'Adhoc');
+            ga('send', 'event', location.href, 'play', 'Adhoc');
         }
 
         // Login related JS specific for the shell site
