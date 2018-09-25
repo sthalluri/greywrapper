@@ -247,7 +247,7 @@
             $('#wrapper').show();
 
             // Render the visualization list
-            inAppBIWrapper.getDashboards('root', function (response) {
+            inAppBIWrapper.getDashboards('root.*', function (response) {
                 var template = '{{#each this}}' +
                         '<li style="list-style-type: none;">' +
                         '   <a href="#" onclick="updateViz(\'{{resourceName}}\')" style="color: #A5ACB3; text-decoration: none;">' +
